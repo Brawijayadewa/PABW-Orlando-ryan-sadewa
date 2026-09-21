@@ -1,4 +1,5 @@
 # PABW-Orlando ryan sadewa
+# 25523129
 
 Halaman web HTML simpel
  
@@ -16,6 +17,5 @@ Topik halaman saya: List anime dan donghua saya
  
 ## Catatan penggunaan AI
  
-Tulis bagian mana yang dibantu AI dan bagian mana yang Anda
-kerjakan sendiri, atau tulis: tidak memakai AI.
+40% dibantu chat-gpt, khusunya di body(sector 1 dan 2), serta label dan input. Selebihnya saya cari sendiri dan ubah sendiri dengan bantuan W3School.
 
