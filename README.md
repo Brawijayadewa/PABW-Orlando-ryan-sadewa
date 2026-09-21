@@ -19,3 +19,5 @@ Topik halaman saya: List anime dan donghua saya
  
 40% dibantu chat-gpt, khusunya di body(sector 1 dan 2), serta label dan input. Selebihnya saya cari sendiri dan ubah sendiri dengan bantuan W3School.
 
+## Link Repository
+https://github.com/Brawijayadewa/PABW-Orlando-ryan-sadewa
