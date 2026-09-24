@@ -60,9 +60,6 @@ footer {
 }
 
 
-/* =========================
-   PENGATUR TEMA
-   ========================= */
 
 .tema-pengatur {
     display: flex;
@@ -70,7 +67,6 @@ footer {
 }
 
 
-/* Tombol tema */
 
 .tombol-tema {
     display: inline-block;
@@ -93,10 +89,6 @@ footer {
     opacity: 0.85;
 }
 
-
-/* =========================
-   RESPONSIVE
-   ========================= */
 
 @media (max-width: 45rem) {
 

@@ -1,7 +1,3 @@
-/* =========================
-   MODE TERANG
-   ========================= */
-
 :root {
     --color-bg: #F8FAFC;
     --color-fg: #0F172A;
@@ -15,9 +11,6 @@
 }
 
 
-/* =========================
-   CHECKBOX TEMA
-   ========================= */
 
 .pengalih-tema {
     position: absolute;
@@ -29,9 +22,6 @@
 }
 
 
-/* =========================
-   MODE GELAP
-   ========================= */
 
 :root:has(#tema:checked) {
     --color-bg: #0F172A;
@@ -46,9 +36,6 @@
 }
 
 
-/* =========================
-   TOMBOL
-   ========================= */
 
 #tema:not(:checked) + .tombol-tema {
     font-size: var(--text-sm);
