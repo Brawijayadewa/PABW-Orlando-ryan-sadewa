@@ -1,0 +1,52 @@
+:root {
+    --color-bg: #F8FAFC;
+    --color-fg: #0F172A;
+    --color-surface: #FFFFFF;
+    --color-border: #64748B;
+    --color-primary: #4F46E5;
+    --color-danger: #B00020;
+    --color-focus: #6366F1;
+
+    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+
+
+.pengalih-tema {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+}
+
+
+
+:root:has(#tema:checked) {
+    --color-bg: #0F172A;
+    --color-fg: #E2E8F0;
+    --color-surface: #1E293B;
+    --color-border: #64748B;
+    --color-primary: #A5B4FC;
+    --color-danger: #FF8A8A;
+    --color-focus: #FFC000;
+
+    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+
+
+#tema:not(:checked) + .tombol-tema {
+    font-size: var(--text-sm);
+}
+
+#tema:not(:checked) + .tombol-tema::after {
+    content: "🌙|Tema Gelap";
+    font-size: var(--text-sm);
+}
+
+#tema:checked + .tombol-tema::after {
+    content: "☀️|Tema Terang";
+    font-size: var(--text-sm);
+}
