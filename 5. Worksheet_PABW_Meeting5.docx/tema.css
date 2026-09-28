@@ -7,9 +7,9 @@
     --color-danger: #B00020;
     --color-focus: #6366F1;
 
-    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.10);
+    --shadow-1:
+        0 1px 3px rgba(0, 0, 0, 0.10);
 }
-
 
 
 .pengalih-tema {
@@ -22,8 +22,49 @@
 }
 
 
+.tombol-tema {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 8.5rem;
+    min-height: 2.5rem;
+
+    padding:
+        var(--space-2)
+        var(--space-3);
+
+    border:
+        1px solid var(--color-border);
+
+    border-radius: var(--radius-full);
+
+    background: var(--color-surface);
+
+    color: var(--color-fg);
+
+    cursor: pointer;
+
+    font-size: 0;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+#tema:not(:checked)
++ .tombol-tema::before {
+
+    content: "🌙 Tema Gelap";
+
+    font-size: var(--text-sm);
+}
+
 
 :root:has(#tema:checked) {
+
     --color-bg: #0F172A;
     --color-fg: #E2E8F0;
     --color-surface: #1E293B;
@@ -32,21 +73,20 @@
     --color-danger: #FF8A8A;
     --color-focus: #FFC000;
 
-    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.45);
+    --shadow-1:
+        0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 
+#tema:checked
++ .tombol-tema::before {
 
-#tema:not(:checked) + .tombol-tema {
+    content: "☀️ Tema Terang";
+
     font-size: var(--text-sm);
 }
 
-#tema:not(:checked) + .tombol-tema::after {
-    content: "🌙|Tema Gelap";
-    font-size: var(--text-sm);
-}
 
-#tema:checked + .tombol-tema::after {
-    content: "☀️|Tema Terang";
-    font-size: var(--text-sm);
+.tombol-tema:hover {
+    opacity: 0.85;
 }

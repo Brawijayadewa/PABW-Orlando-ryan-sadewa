@@ -1,4 +1,5 @@
 :root {
+
     --blue-700: #4F46E5;
     --blue-500: #6366F1;
 
@@ -18,7 +19,8 @@
     --radius-md: 0.5rem;
     --radius-full: 999px;
 
-    --shadow-1: 0 1px 3px rgba(0, 0, 0, 0.10);
+    --shadow-1:
+        0 1px 3px rgba(0, 0, 0, 0.10);
 
     --text-sm: 0.875rem;
     --text-md: 1rem;
@@ -28,16 +30,21 @@
 
 
 :root {
+
     --color-bg: var(--gray-50);
     --color-fg: var(--gray-900);
 
     --color-surface: #FFFFFF;
-    --color-border: #CBD5E1;
+
+    --color-border: #64748B;
 
     --color-primary: var(--blue-700);
+
     --color-danger: #B00020;
+
     --color-focus: var(--blue-500);
 
     --card-pad: var(--space-4);
+
     --section-gap: var(--space-6);
 }

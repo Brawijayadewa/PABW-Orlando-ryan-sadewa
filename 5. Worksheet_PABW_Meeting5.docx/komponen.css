@@ -1,99 +1,182 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
+.galeri {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(16rem, 1fr));
+
+    gap: var(--space-4);
+
+    min-width: 0;
 }
 
+
+.galeri .kartu {
+    display: grid;
+
+    align-content: start;
+
+    min-height: 14rem;
+
+    min-width: 0;
+
+    gap: var(--space-3);
+
+    background: var(--color-surface);
+
+    border:
+        1px solid var(--color-border);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-1);
+
+    padding: var(--card-pad);
+}
+
+
+.kartu__kaki {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: var(--space-2);
+
+    flex-wrap: wrap;
+}
+
+.kartu__isi {
+    min-width: 0;
+}
+
+.kartu__judul {
+    overflow-wrap: anywhere;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 0;
+}
 
 caption {
     font-size: var(--text-xl);
+
     font-weight: 600;
+
     margin-bottom: var(--space-3);
+
     text-align: left;
 }
-
 
 th,
 td {
     padding: var(--space-3);
+
     border:
         1px solid var(--color-border);
 
     text-align: left;
-}
 
+    overflow-wrap: anywhere;
+}
 
 thead {
     background: var(--color-primary);
+
     color: var(--color-surface);
 }
 
 
-tbody tr:nth-child(even) {
-    background: var(--gray-100);
-}
-
-
-
 figure {
     display: flex;
+
     flex-direction: column;
+
     gap: var(--space-2);
+
     align-items: center;
+
+    min-width: 0;
 }
 
-
 figure img {
+    max-width: 100%;
+
+    height: auto;
+
     border-radius: var(--radius-md);
+
     box-shadow: var(--shadow-1);
 }
 
-
 figcaption {
     font-size: var(--text-sm);
+
     text-align: center;
 }
 
 
 form {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    max-width: 40rem;
-}
 
+    flex-direction: column;
+
+    gap: var(--space-4);
+
+    max-width: 40rem;
+
+    min-width: 0;
+}
 
 .form-kolom {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-}
 
+    flex-direction: column;
+
+    gap: var(--space-2);
+
+    min-width: 0;
+}
 
 label {
     font-size: var(--text-sm);
+
     font-weight: 600;
 }
-
 
 input,
 select,
 textarea {
     font: inherit;
+
+    width: 100%;
+
+    max-width: 100%;
+
     padding:
         var(--space-2)
         var(--space-3);
+
     border:
         1px solid var(--color-border);
 
     border-radius: var(--radius-md);
-    background: var(--color-surface);
-    color: var(--color-fg);
-    width: 100%;
-}
 
+    background: var(--color-surface);
+
+    color: var(--color-fg);
+}
 
 button {
     font: inherit;
+
+    width: fit-content;
+
     padding:
         var(--space-2)
         var(--space-4);
@@ -102,12 +185,13 @@ button {
         1px solid transparent;
 
     border-radius: var(--radius-md);
-    background: var(--color-primary);
-    color: var(--color-surface);
-    cursor: pointer;
-    width: fit-content;
-}
 
+    background: var(--color-primary);
+
+    color: var(--color-surface);
+
+    cursor: pointer;
+}
 
 button:hover {
     opacity: 0.9;
@@ -124,22 +208,20 @@ button:hover {
 
 
 input:user-invalid {
-    border-color:
-        var(--color-danger);
+    border-color: var(--color-danger);
 
     border-width: 2px;
 }
 
-
 .pesan-galat {
     display: none;
+
     color: var(--color-danger);
+
     font-size: var(--text-sm);
 }
 
-
 .form-kolom:has(input:user-invalid)
 .pesan-galat {
-
     display: block;
 }
