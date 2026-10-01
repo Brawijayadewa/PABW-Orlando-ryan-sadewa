@@ -1,11 +1,10 @@
 .galeri {
     display: grid;
-    grid-template-columns:
-        repeat(auto-fit, minmax(16rem, 1fr));
-
+    grid-template-columns: 1fr;
     gap: var(--space-4);
     min-width: 0;
 }
+
 
 .galeri .kartu {
     display: grid;
@@ -22,6 +21,7 @@
     padding: var(--card-pad);
 }
 
+
 .kartu__kaki {
     display: flex;
     align-items: center;
@@ -30,12 +30,19 @@
     flex-wrap: wrap;
 }
 
+
 .kartu__isi {
     min-width: 0;
 }
 
+
 .kartu__judul {
     overflow-wrap: anywhere;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    min-width: 0;
 }
 
 table {
@@ -144,11 +151,14 @@ button:hover {
     opacity: 0.9;
 }
 
+
 :focus-visible {
     outline:
         2px solid var(--color-focus);
+
     outline-offset: 2px;
 }
+
 
 input:user-invalid {
     border-color: var(--color-danger);
