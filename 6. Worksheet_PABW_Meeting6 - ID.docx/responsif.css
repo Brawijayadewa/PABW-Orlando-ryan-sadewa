@@ -8,14 +8,18 @@ img {
     height: auto;
 }
 
+
 @media (min-width: 48rem) {
 
     .galeri {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
     }
-}
 
+    #Anime .galeri .kartu {
+        grid-column: 1 / -1;
+    }
+}
 
 @media (min-width: 60rem) {
 
@@ -30,6 +34,10 @@ img {
 
     .galeri {
         grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+            repeat(3, minmax(0, 1fr));
+    }
+
+    #Anime .galeri .kartu {
+        grid-column: 1 / -1;
     }
 }

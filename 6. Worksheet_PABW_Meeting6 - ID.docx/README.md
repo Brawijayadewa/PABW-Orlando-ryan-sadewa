@@ -1,12 +1,8 @@
-## Pertemuan 5 — Layout Modern: Flexbox dan Grid
+## Pertemuan 6 — Responsif Mobile-First
  
 Indikasi selesai:
--Kerangka halaman sudah sesuai petunjuk
--Jarak sudah memakai gap
--Lebar sudah memakai fr/rem
--Galeri berubah/adaptif
--Kotak sesuai tidak meluber
--Tombol tema masih bisa diklik
+-Rapi (Tulisan, Kolom, dll), dapat berjalan di 360px, 768px, 1280px
+-Semua perintah pentunjuk worksheet dijalankan semaksimalnya
 
 ## Catatan penggunaan AI
  
