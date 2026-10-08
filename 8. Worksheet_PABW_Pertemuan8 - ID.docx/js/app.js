@@ -21,3 +21,17 @@ console.log("Kota:", alamatProfil);
 console.log(typeof profil.nama);
 console.log(typeof profil.jumlahProyek);
 console.log(typeof profil.keahlian);
+
+function buatPerkenalan(nama, peran) {
+    return `Halo, saya ${nama}. Saya adalah ${peran}.`;
+}
+
+function formatKeahlian(keahlian) {
+    return keahlian.join(", ");
+}
+
+const perkenalan = buatPerkenalan(profil.nama, profil.peran);
+const daftarKeahlian = formatKeahlian(profil.keahlian);
+
+console.log(perkenalan);
+console.log("Keahlian:", daftarKeahlian);
