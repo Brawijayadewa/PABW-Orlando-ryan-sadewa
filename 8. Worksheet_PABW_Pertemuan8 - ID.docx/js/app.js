@@ -35,3 +35,52 @@ const daftarKeahlian = formatKeahlian(profil.keahlian);
 
 console.log(perkenalan);
 console.log("Keahlian:", daftarKeahlian);
+
+const daftarProyek = [
+    {
+        judul: "Halaman Profil",
+        tahun: 2026,
+        selesai: true
+    },
+    {
+        judul: "Katalog Anime",
+        tahun: 2026,
+        selesai: false
+    },
+    {
+        judul: "Website Koleksi Manhwa",
+        tahun: 2026,
+        selesai: true
+    }
+];
+
+
+const judulProyek = daftarProyek.map((proyek) => proyek.judul);
+
+console.log("Hasil map:");
+console.table(judulProyek);
+
+const proyekSelesai = daftarProyek.filter((proyek) => proyek.selesai);
+
+console.log("Proyek yang sudah selesai:");
+console.table(proyekSelesai);
+
+const proyekKatalog = daftarProyek.find(
+    (proyek) => proyek.judul === "Katalog Anime"
+);
+
+console.log("Hasil find:");
+console.log(proyekKatalog);
+
+console.log("Seluruh daftar proyek:");
+console.table(daftarProyek);
+
+const proyekTerurut = [...daftarProyek].sort(
+    (a, b) => a.judul.localeCompare(b.judul)
+);
+
+console.log("Daftar proyek setelah disalin dan diurutkan:");
+console.table(proyekTerurut);
+
+console.log("Data asli tetap:");
+console.table(daftarProyek);
