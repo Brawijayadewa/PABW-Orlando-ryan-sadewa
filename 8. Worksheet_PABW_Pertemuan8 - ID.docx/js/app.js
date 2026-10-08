@@ -84,12 +84,10 @@ console.table(proyekTerurut);
 
 console.log("Data asli tetap:");
 console.table(daftarProyek);
-console.log(profil.namaLengkap);
-
-const elemen = document.querySelector("#elemen-yang-tidak-ada");
-console.log(elemen.textContent);
 
 const nilai1 = "10";
 const nilai2 = "20";
+const hasil = 10 + 20;
 
-console.log(nilai1 + nilai2);
+console.log(hasil);
+console.log(profil.nama);
