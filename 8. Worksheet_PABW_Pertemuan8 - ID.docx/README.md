@@ -1,8 +1,7 @@
-## Pertemuan 6 — Responsif Mobile-First
+## Pertemuan 8 — JavaScript Modern ES6+, Struktur Data, dan Array Methods
  
 Indikasi selesai:
--Rapi (Tulisan, Kolom, dll), dapat berjalan di 360px, 768px, 1280px
--Semua perintah pentunjuk worksheet dijalankan semaksimalnya
+-
 
 ## Catatan penggunaan AI
  
