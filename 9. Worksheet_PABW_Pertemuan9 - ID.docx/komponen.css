@@ -195,11 +195,11 @@ input:user-invalid {
 
 .baris-filter button:hover {
     background: var(--primary);
-    color: white;
+    color: rgb(52, 4, 245);
 }
 
 .baris-filter button.aktif {
     background: var(--primary);
-    color: white;
+    color: rgb(52, 4, 245);
     border-color: var(--primary);
 }
