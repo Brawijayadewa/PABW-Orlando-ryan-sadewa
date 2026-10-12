@@ -62,7 +62,23 @@
                 </div>
             </aside>
 
-            <div class="utama">
+            <div class="utama">       
+                <section id="Proyek">
+                    <h2>Daftar Proyek</h2>
+
+                    <div id="filter" class="baris-filter">
+                        <button type="button" data-kategori="semua">Semua</button>
+                        <button type="button" data-kategori="web">Web</button>
+                        <button type="button" data-kategori="lainnya">Lainnya</button>
+                    </div>
+
+                    <ul id="daftar" class="galeri"></ul>
+
+                    <p id="kosong" hidden>
+                        Tidak ada proyek yang sesuai dengan kategori ini.
+                    </p>
+                </section>
+
                 <section id="Anime">
                     <h2>Anime, Donghua, dan Manhwa</h2>
 
@@ -119,7 +135,7 @@
                 <section id="Donghua">
                     <h2>Tambah Koleksi</h2>
 
-                    <form action="/simpan" method="post">
+                    <form id="form-koleksi" action="/simpan" method="post">
                         <div class="form-kolom">
                             <label for="list-donghua">List Donghua:</label>
                             <input
