@@ -175,3 +175,31 @@ input:user-invalid {
 .pesan-galat {
     display: block;
 }
+
+.baris-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.baris-filter button {
+    padding: 0.55rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    background: var(--surface);
+    color: var(--fg);
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.baris-filter button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.baris-filter button.aktif {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}

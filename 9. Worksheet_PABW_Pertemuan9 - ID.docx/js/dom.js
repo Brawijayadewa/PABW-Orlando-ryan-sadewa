@@ -43,10 +43,54 @@ function render(daftar) {
 
     pesanKosong.hidden = true;
 
-    const kartuProyek = daftar.map((proyek) => buatKartu(proyek));
+    const kartuProyek = daftar.map((proyek) =>
+        buatKartu(proyek)
+    );
+
     const fragmen = document.createDocumentFragment();
-    kartuProyek.forEach((kartu) => fragmen.append(kartu));
+
+    kartuProyek.forEach((kartu) => {
+        fragmen.append(kartu);
+    });
+
     wadah.append(fragmen);
 }
 
+function tandaiTombolAktif(tombolAktif) {
+    const semuaTombol = barisFilter.querySelectorAll("button");
+
+    semuaTombol.forEach((tombol) => {
+        tombol.classList.toggle(
+            "aktif",
+            tombol === tombolAktif
+        );
+    });
+}
+
+barisFilter.addEventListener("click", (event) => {
+    const tombol = event.target.closest("button");
+
+    if (!tombol || !barisFilter.contains(tombol)) {
+        return;
+    }
+
+    const kategori = tombol.dataset.kategori;
+
+    const hasilFilter = kategori === "semua"
+        ? daftarProyek
+        : daftarProyek.filter(
+            (proyek) => proyek.kategori === kategori
+        );
+
+    render(hasilFilter);
+
+    tandaiTombolAktif(tombol);
+});
+
 render(daftarProyek);
+
+const tombolSemua = barisFilter.querySelector(
+    '[data-kategori="semua"]'
+);
+
+tandaiTombolAktif(tombolSemua);
