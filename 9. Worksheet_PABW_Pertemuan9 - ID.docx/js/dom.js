@@ -43,14 +43,10 @@ function render(daftar) {
 
     pesanKosong.hidden = true;
 
-    const kartuProyek = daftar.map((proyek) =>
-        buatKartu(proyek)
-    );
-
     const fragmen = document.createDocumentFragment();
 
-    kartuProyek.forEach((kartu) => {
-        fragmen.append(kartu);
+    daftar.forEach((proyek) => {
+        fragmen.append(buatKartu(proyek));
     });
 
     wadah.append(fragmen);
@@ -60,10 +56,7 @@ function tandaiTombolAktif(tombolAktif) {
     const semuaTombol = barisFilter.querySelectorAll("button");
 
     semuaTombol.forEach((tombol) => {
-        tombol.classList.toggle(
-            "aktif",
-            tombol === tombolAktif
-        );
+        tombol.classList.toggle("aktif", tombol === tombolAktif);
     });
 }
 
@@ -83,14 +76,110 @@ barisFilter.addEventListener("click", (event) => {
         );
 
     render(hasilFilter);
-
     tandaiTombolAktif(tombol);
 });
 
 render(daftarProyek);
 
-const tombolSemua = barisFilter.querySelector(
-    '[data-kategori="semua"]'
+tandaiTombolAktif(
+    barisFilter.querySelector('[data-kategori="semua"]')
 );
 
-tandaiTombolAktif(tombolSemua);
+const kolomForm = [
+    {
+        input: document.querySelector("#list-donghua"),
+        pesan: document.querySelector("#error-donghua"),
+        nama: "Donghua"
+    },
+    {
+        input: document.querySelector("#list-anime"),
+        pesan: document.querySelector("#error-anime"),
+        nama: "Anime"
+    },
+    {
+        input: document.querySelector("#list-manhwa"),
+        pesan: document.querySelector("#error-manhwa"),
+        nama: "Manhwa"
+    }
+];
+
+const tombolKirim = document.querySelector("#btn-kirim");
+
+console.log("Tombol kirim:", tombolKirim);
+
+kolomForm.forEach((kolom) => {
+    console.log("Kolom:", kolom.input);
+    console.log("Pesan galat:", kolom.pesan);
+});
+
+function periksaKolom(kolom) {
+    const nilai = kolom.input.value.trim();
+    const sah = nilai.length > 0;
+
+    kolom.input.setAttribute("aria-invalid", String(!sah));
+
+    if (!sah) {
+        kolom.pesan.textContent =
+            `Nama ${kolom.nama} wajib diisi. ` +
+            `Silakan masukkan nama ${kolom.nama.toLowerCase()}.`;
+
+        kolom.pesan.hidden = false;
+    } else {
+        kolom.pesan.textContent = "";
+        kolom.pesan.hidden = true;
+    }
+
+    return sah;
+}
+
+function periksaForm() {
+    const hasil = kolomForm.map((kolom) => periksaKolom(kolom));
+    const semuaSah = hasil.every(Boolean);
+
+    tombolKirim.disabled = !semuaSah;
+
+    return semuaSah;
+}
+
+kolomForm.forEach((kolom) => {
+    kolom.input.addEventListener("input", () => {
+        periksaKolom(kolom);
+
+        const semuaSah = kolomForm.every(
+            (item) => item.input.value.trim().length > 0
+        );
+
+        tombolKirim.disabled = !semuaSah;
+    });
+
+    kolom.input.addEventListener("blur", () => {
+        periksaKolom(kolom);
+
+        const semuaSah = kolomForm.every(
+            (item) => item.input.value.trim().length > 0
+        );
+
+        tombolKirim.disabled = !semuaSah;
+    });
+});
+
+formKoleksi.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const semuaSah = periksaForm();
+
+    if (!semuaSah) {
+        const kolomBermasalah = kolomForm.find(
+            (kolom) => kolom.input.value.trim().length === 0
+        );
+
+        if (kolomBermasalah) {
+            kolomBermasalah.input.focus();
+        }
+
+        return;
+    }
+
+    alert("Validasi berhasil! Semua kolom sudah terisi.");
+
+});

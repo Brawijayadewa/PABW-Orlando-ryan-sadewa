@@ -1,10 +1,9 @@
 .galeri {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
     gap: var(--space-4);
     min-width: 0;
 }
-
 
 .galeri .kartu {
     display: grid;
@@ -13,14 +12,11 @@
     min-width: 0;
     gap: var(--space-3);
     background: var(--color-surface);
-    border:
-        1px solid var(--color-border);
-
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-1);
     padding: var(--card-pad);
 }
-
 
 .kartu__kaki {
     display: flex;
@@ -30,11 +26,9 @@
     flex-wrap: wrap;
 }
 
-
 .kartu__isi {
     min-width: 0;
 }
-
 
 .kartu__judul {
     overflow-wrap: anywhere;
@@ -61,9 +55,7 @@ caption {
 th,
 td {
     padding: var(--space-3);
-    border:
-        1px solid var(--color-border);
-
+    border: 1px solid var(--color-border);
     text-align: left;
     overflow-wrap: anywhere;
 }
@@ -82,6 +74,7 @@ figure {
 }
 
 figure img {
+    display: block;
     max-width: 100%;
     height: auto;
     border-radius: var(--radius-md);
@@ -97,11 +90,13 @@ form {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
+    width: 100%;
     max-width: 40rem;
     min-width: 0;
 }
 
-.form-kolom {
+.form-kolom,
+.field-form {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
@@ -116,34 +111,37 @@ label {
 input,
 select,
 textarea {
-    font: inherit;
+    box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    padding:
-        var(--space-2)
-        var(--space-3);
-
-    border:
-        1px solid var(--color-border);
-
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     background: var(--color-surface);
     color: var(--color-fg);
+    font: inherit;
+}
+
+input:user-invalid {
+    border-color: var(--color-danger);
+    border-width: 2px;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
 }
 
 button {
-    font: inherit;
+    box-sizing: border-box;
     width: fit-content;
-    padding:
-        var(--space-2)
-        var(--space-4);
-
-    border:
-        1px solid transparent;
-
+    max-width: 100%;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid transparent;
     border-radius: var(--radius-md);
     background: var(--color-primary);
-    color: var(--color-surface);
+    color: #FFFFFF;
+    font: inherit;
     cursor: pointer;
 }
 
@@ -151,29 +149,9 @@ button:hover {
     opacity: 0.9;
 }
 
-
-:focus-visible {
-    outline:
-        2px solid var(--color-focus);
-
-    outline-offset: 2px;
-}
-
-
-input:user-invalid {
-    border-color: var(--color-danger);
-    border-width: 2px;
-}
-
-.pesan-galat {
-    display: none;
-    color: var(--color-danger);
-    font-size: var(--text-sm);
-}
-
-.form-kolom:has(input:user-invalid)
-.pesan-galat {
-    display: block;
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .baris-filter {
@@ -185,21 +163,59 @@ input:user-invalid {
 
 .baris-filter button {
     padding: 0.55rem 1rem;
-    border: 1px solid var(--border);
+    border: 1px solid var(--color-border);
     border-radius: 0.5rem;
-    background: var(--surface);
-    color: var(--fg);
+    background: var(--color-surface);
+    color: var(--color-fg);
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s;
 }
 
-.baris-filter button:hover {
-    background: var(--primary);
-    color: rgb(52, 4, 245);
+.baris-filter button:hover,
+.baris-filter button.aktif {
+    background: var(--color-primary);
+    color: #FFFFFF;
+    border-color: var(--color-primary);
 }
 
-.baris-filter button.aktif {
-    background: var(--primary);
-    color: rgb(52, 4, 245);
-    border-color: var(--primary);
+.field-form {
+    margin-bottom: 0.5rem;
+}
+
+.field-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.field-form input[aria-invalid="true"] {
+    border: 2px solid var(--color-danger);
+}
+
+.pesan-error {
+    margin: 0.35rem 0 0;
+    color: var(--color-danger);
+    font-size: var(--text-sm);
+}
+
+.pesan-error[hidden] {
+    display: none;
+}
+
+#btn-kirim {
+    align-self: flex-start;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    background: var(--color-primary);
+    color: #FFFFFF;
+    font: inherit;
+}
+
+#btn-kirim:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#btn-kirim:not(:disabled) {
+    cursor: pointer;
 }

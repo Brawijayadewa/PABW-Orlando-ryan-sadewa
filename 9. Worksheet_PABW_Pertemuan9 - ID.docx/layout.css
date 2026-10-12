@@ -1,6 +1,7 @@
 .page {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
     min-height: 100dvh;
 }
 
@@ -25,6 +26,7 @@ nav ul {
     gap: var(--space-4);
     list-style: none;
     padding: 0;
+    margin: 0;
     flex-wrap: wrap;
 }
 
@@ -45,11 +47,9 @@ nav a:hover {
 
 .isi {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "sisi"
-        "utama";
-
+    grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+    grid-template-areas: "sisi utama";
+    align-items: start;
     gap: var(--space-6);
     padding-block: var(--space-6);
     min-width: 0;
@@ -62,10 +62,15 @@ nav a:hover {
 
 .utama {
     grid-area: utama;
-    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: var(--section-gap);
+    min-width: 0;
+}
+
+.utama section {
+    min-width: 0;
+    scroll-margin-top: 1rem;
 }
 
 .sisi .kartu {
@@ -73,9 +78,7 @@ nav a:hover {
     flex-direction: column;
     gap: var(--space-3);
     background: var(--color-surface);
-    border:
-        1px solid var(--color-border);
-
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-1);
     padding: var(--card-pad);
@@ -89,9 +92,25 @@ nav a:hover {
 
 footer {
     padding-block: var(--space-4);
-    border-top:
-        1px solid var(--color-border);
-
+    border-top: 1px solid var(--color-border);
     color: var(--color-fg);
     font-size: var(--text-sm);
+}
+
+@media (max-width: 760px) {
+    .isi {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "sisi"
+            "utama";
+    }
+
+    .navbar nav {
+        margin-left: 0;
+    }
+
+    .sisi nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }

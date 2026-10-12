@@ -132,52 +132,53 @@
                     </figure>
                 </section>
 
-                <section id="Donghua">
+                
+                <section id="TambahKoleksi">
                     <h2>Tambah Koleksi</h2>
 
                     <form id="form-koleksi" action="/simpan" method="post">
-                        <div class="form-kolom">
-                            <label for="list-donghua">List Donghua:</label>
+                        <div class="field-form">
+                            <label for="list-donghua">Nama Donghua</label>
                             <input
                                 type="text"
                                 id="list-donghua"
-                                name="list-donghua"
-                                required>
-
-                            <p class="pesan-galat">
-                                Silakan isi nama donghua.
-                            </p>
+                                name="donghua"
+                                placeholder="Masukkan nama donghua"
+                                aria-describedby="error-donghua"
+                            />
+                            <p id="error-donghua" class="pesan-error" hidden></p>
                         </div>
 
-                        <div class="form-kolom">
-                            <label for="list-anime">List Anime:</label>
+                        <div class="field-form">
+                            <label for="list-anime">Nama Anime</label>
                             <input
                                 type="text"
                                 id="list-anime"
-                                name="list-anime"
-                                required>
-
-                            <p class="pesan-galat">
-                                Silakan isi nama anime.
-                            </p>
+                                name="anime"
+                                placeholder="Masukkan nama anime"
+                                aria-describedby="error-anime"
+                            />
+                            <p id="error-anime" class="pesan-error" hidden></p>
                         </div>
 
-                        <div class="form-kolom">
-                            <label for="list-manhwa">List Manhwa:</label>
+                        <div class="field-form">
+                            <label for="list-manhwa">Nama Manhwa</label>
                             <input
                                 type="text"
                                 id="list-manhwa"
-                                name="list-manhwa"
-                                required>
-
-                            <p class="pesan-galat">
-                                Silakan isi nama manhwa.
-                            </p>
+                                name="manhwa"
+                                placeholder="Masukkan nama manhwa"
+                                aria-describedby="error-manhwa"
+                            />
+                            <p id="error-manhwa" class="pesan-error" hidden></p>
                         </div>
 
-                        <button type="submit">Simpan</button>
+                        <button type="submit" id="btn-kirim" disabled>
+                            Kirim Koleksi
+                        </button>
                     </form>
                 </section>
+
 
                 <section id="Manhwa">
                     <h2>Manhwa Favorit</h2>
