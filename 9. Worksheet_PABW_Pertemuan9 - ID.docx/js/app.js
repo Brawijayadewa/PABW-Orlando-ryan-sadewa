@@ -36,24 +36,26 @@ const daftarKeahlian = formatKeahlian(profil.keahlian);
 console.log(perkenalan);
 console.log("Keahlian:", daftarKeahlian);
 
-const daftarProyek = [
+export const daftarProyek = [
     {
         judul: "Halaman Profil",
         tahun: 2026,
-        selesai: true
+        selesai: true,
+        kategori: "web"
     },
     {
         judul: "Katalog Anime",
         tahun: 2026,
-        selesai: false
+        selesai: false,
+        kategori: "web"
     },
     {
         judul: "Website Koleksi Manhwa",
         tahun: 2026,
-        selesai: true
+        selesai: true,
+        kategori: "lainnya"
     }
 ];
-
 
 const judulProyek = daftarProyek.map((proyek) => proyek.judul);
 
