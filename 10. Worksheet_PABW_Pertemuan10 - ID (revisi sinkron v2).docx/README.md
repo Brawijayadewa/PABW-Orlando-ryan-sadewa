@@ -1,20 +1,14 @@
-## Pertemuan 9 — Front-end Foundation (DOM, Event, dan Interaktivitas)
- 
+## Pertemuan 10 — Front-end Foundation (JavaScript Asinkron: fetch, Promise, dan JSON)
 Indikasi selesai:
--Pilihan dan isi elemen ada
--Semua event ada
--Galat tidak ada yang error (hanya beberapa pesan galat lama yang masih error)
--Ketiga form dan tombol kirim bekerja
+-Pengerjaan sudah sesuai worksheet, bukti dan deklarasi AI ada
+-Semua status terhubung tidak ada galat merah
+-Pembacaan json sudah bisa dengan raw dari proyek.json
 
 ## Deklarasi Penggunaan AI
 
-Saya menggunakan ChatGPT sebagai alat bantu untuk memahami dan memperbaiki kode HTML, CSS, serta JavaScript pada tugas P9.
-
-Bagian yang dibantu AI meliputi:
-- Pemilihan elemen DOM menggunakan `querySelector()` dan `querySelectorAll()`.
-- Pembuatan elemen dan penampilan data proyek menggunakan `createElement()`, `textContent`, dan `append()`.
-- Penerapan event delegation untuk tombol filter.
-- Pembuatan validasi form dan pesan galat.
-- Pemeriksaan serta perbaikan tampilan CSS.
+Saya menggunakan ChatGPT sebagai alat bantu untuk memahami dan memperbaiki kode HTML, CSS, serta JavaScript pada tugas P10.
 
 Saya tetap bertanggung jawab untuk memeriksa, menguji, memahami, dan menyesuaikan kode dengan proyek saya sendiri. Bukti pengujian dan hasil akhir diperiksa melalui browser dan DevTools.
+
+## Note
+Mohon maaf untuk repositorynya ternyata saya baru tau, jika Repo PABW saya masih Private dari P1-P9. Sekarang sudah saya ubah ke publik, Mohon maaf jika kesalahan ini membuat Pegampu tidak dapat melihat code saya di github.
