@@ -1,4 +1,4 @@
-const ALAMAT = "./data/proyek.json";
+const ALAMAT = "https://raw.githubusercontent.com/Brawijayadewa/PABW-Orlando-ryan-sadewa/refs/heads/main/10.%20Worksheet_PABW_Pertemuan10%20-%20ID%20(revisi%20sinkron%20v2).docx/data/proyek.json?token=GHSAT0AAAAAAEMP6ALKEN2UNBVV5EBSAHOW2WQOSOQ";
 
 export async function ambilProyek() {
     try {
