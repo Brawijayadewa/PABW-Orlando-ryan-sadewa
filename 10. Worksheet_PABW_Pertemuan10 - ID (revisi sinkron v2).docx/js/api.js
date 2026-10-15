@@ -1,18 +1,17 @@
-const ALAMAT = "data/proyek.json";
+const ALAMAT = "./data/proyek.json";
 
-export async function muat() {
-    const respons = await fetch(ALAMAT);
+export async function ambilProyek() {
+    try {
+        const respons = await fetch(ALAMAT);
 
-    console.log(
-        "status:",
-        respons.status,
-        "ok:",
-        respons.ok
-    );
+        if (!respons.ok) {
+            throw new Error("Status " + respons.status);
+        }
 
-    if (!respons.ok) {
-        throw new Error("Status " + respons.status);
+        const data = await respons.json();
+        return data;
+    } catch (galat) {
+        console.error("Gagal memuat proyek:", galat.message);
+        throw galat;
     }
-
-    return respons.json();
 }
