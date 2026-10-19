@@ -1,9 +1,11 @@
+import { saring } from "./api.js";
+
 const wadah = document.querySelector("#daftar");
 const pesanKosong = document.querySelector("#kosong");
 const pesanMuat = document.querySelector("#muat");
 const pesanGalat = document.querySelector("#galat");
 
-function buatKartu(proyek) {
+export function buatKartu(proyek, favorit) {
     const li = document.createElement("li");
     li.className = "kartu";
 
@@ -21,16 +23,34 @@ function buatKartu(proyek) {
     const kategori = document.createElement("p");
     kategori.textContent = `Kategori: ${proyek.kategori}`;
 
-    li.append(judul, tahun, status, kategori);
+    const tombol = document.createElement("button");
+    tombol.className = "favorit";
+    tombol.dataset.id = proyek.id;
+    tombol.textContent = favorit.includes(proyek.id)
+        ? "★ Favorit"
+        : "☆ Favorit";
+    tombol.type = "button";
+    tombol.setAttribute(
+        "aria-label",
+        `Ubah favorit ${proyek.judul}`
+    );
+
+    li.append(judul, tahun, status, kategori, tombol);
     return li;
 }
 
-export function render(daftar) {
+export function render(state) {
     wadah.replaceChildren();
     pesanKosong.hidden = true;
 
+    const daftar = saring(
+        state.daftarProyek,
+        state.kategoriAktif
+    );
+
     if (daftar.length === 0) {
-        pesanKosong.textContent = "Belum ada proyek untuk kategori ini.";
+        pesanKosong.textContent =
+            "Belum ada proyek untuk kategori ini.";
         pesanKosong.hidden = false;
         return;
     }
@@ -38,7 +58,9 @@ export function render(daftar) {
     const fragmen = document.createDocumentFragment();
 
     daftar.forEach((proyek) => {
-        fragmen.append(buatKartu(proyek));
+        fragmen.append(
+            buatKartu(proyek, state.favorit)
+        );
     });
 
     wadah.append(fragmen);
