@@ -2,6 +2,15 @@ import {
     pilihKategori,
     tambahFavorit
 } from "./state.js";
+import { aturUlang } from "./state.js";
+
+const tombolAturUlang = document.querySelector("#atur-ulang");
+
+if (tombolAturUlang) {
+    tombolAturUlang.addEventListener("click", () => {
+        aturUlang();
+    });
+}
 
 export function pasangPendengar() {
     const barisFilter = document.querySelector("#filter");
