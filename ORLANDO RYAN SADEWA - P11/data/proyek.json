@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "judul": "Halaman Profil",
+    "tahun": 2026,
+    "kategori": "web",
+    "selesai": true
+  },
+  {
+    "id": 2,
+    "judul": "Katalog Anime",
+    "tahun": 2026,
+    "kategori": "web",
+    "selesai": false
+  },
+  {
+    "id": 3,
+    "judul": "Website Koleksi Manhwa",
+    "tahun": 2026,
+    "kategori": "lainnya",
+    "selesai": true
+  }
+]
