@@ -10,11 +10,10 @@ const emit = defineEmits(['ubah-kategori', 'atur-ulang'])
 </script>
 
 <template>
-  <div class="filter-proyek">
-    <div id="filter">
+  <div class="kontrol-proyek">
+    <div id="filter" class="baris-filter">
       <button
         type="button"
-        data-kategori="semua"
         :class="{ aktif: kategoriAktif === 'semua' }"
         @click="emit('ubah-kategori', 'semua')"
       >
@@ -23,7 +22,6 @@ const emit = defineEmits(['ubah-kategori', 'atur-ulang'])
 
       <button
         type="button"
-        data-kategori="web"
         :class="{ aktif: kategoriAktif === 'web' }"
         @click="emit('ubah-kategori', 'web')"
       >
@@ -32,7 +30,6 @@ const emit = defineEmits(['ubah-kategori', 'atur-ulang'])
 
       <button
         type="button"
-        data-kategori="lainnya"
         :class="{ aktif: kategoriAktif === 'lainnya' }"
         @click="emit('ubah-kategori', 'lainnya')"
       >
@@ -40,11 +37,7 @@ const emit = defineEmits(['ubah-kategori', 'atur-ulang'])
       </button>
     </div>
 
-    <button
-      id="atur-ulang"
-      type="button"
-      @click="emit('atur-ulang')"
-    >
+    <button type="button" id="atur-ulang" @click="emit('atur-ulang')">
       Atur Ulang
     </button>
   </div>

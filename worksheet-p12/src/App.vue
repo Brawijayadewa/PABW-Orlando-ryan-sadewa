@@ -40,7 +40,8 @@ function aturUlang() {
 }
 
 function tanganiKirim(data) {
-  console.log('Data form:', data)
+  console.log('Data koleksi:', data)
+  alert('Data koleksi berhasil dibaca!')
 }
 
 onMounted(async () => {
@@ -48,8 +49,13 @@ onMounted(async () => {
     const tersimpan = JSON.parse(localStorage.getItem('pabw-p11'))
 
     if (tersimpan?.versi === 2) {
-      state.kategoriAktif = tersimpan.kategoriAktif ?? 'semua'
-      state.favorit = tersimpan.favorit ?? []
+      if (['semua', 'web', 'lainnya'].includes(tersimpan.kategoriAktif)) {
+        state.kategoriAktif = tersimpan.kategoriAktif
+      }
+
+      if (Array.isArray(tersimpan.favorit)) {
+        state.favorit = tersimpan.favorit
+      }
     }
   } catch {
     localStorage.removeItem('pabw-p11')
@@ -96,6 +102,18 @@ watch(
       <aside class="sisi">
         <div class="kartu">
           <h2>Koleksi Saya</h2>
+          <p>
+            Selamat datang di koleksi anime,
+            donghua, dan manhwa saya.
+          </p>
+
+          <nav aria-label="Menu koleksi">
+            <ul>
+              <li><a href="#Anime">Anime</a></li>
+              <li><a href="#Donghua">Donghua</a></li>
+              <li><a href="#Manhwa">Manhwa</a></li>
+            </ul>
+          </nav>
         </div>
       </aside>
 
@@ -119,29 +137,98 @@ watch(
         </section>
 
         <section id="Anime">
-          <h2>Anime</h2>
-          <p>Koleksi anime kamu.</p>
+          <h2>Anime, Donghua, dan Manhwa</h2>
+
+          <div class="galeri">
+            <div class="kartu">
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Anime</th>
+                      <th scope="col">Donghua</th>
+                      <th scope="col">Manhwa</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <th scope="row">One Piece</th>
+                      <td>Ni Tian Zhizun</td>
+                      <td>Solo Leveling</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Naruto Shipuden</th>
+                      <td>Xian Ni</td>
+                      <td>Dogulwang</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Jujutsu Kaisen</th>
+                      <td>Wanmei Shijie</td>
+                      <td>Tower of Gods</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <figure>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTseeq3hq7Z1BBo1a2oKNkzll3rG-E-d_3prSPVHPg1eA&s=10"
+              alt="Gambar koleksi anime, donghua, dan manhwa"
+              width="640"
+              height="360"
+              loading="lazy"
+            />
+            <figcaption>
+              Koleksi anime, donghua, dan manhwa
+            </figcaption>
+          </figure>
         </section>
 
         <section id="Donghua">
           <h2>Donghua</h2>
-          <p>Koleksi donghua kamu.</p>
-        </section>
-
-        <section id="Manhwa">
-          <h2>Manhwa</h2>
-          <p>Koleksi manhwa kamu.</p>
+          <p>Koleksi donghua saya.</p>
         </section>
 
         <section id="TambahKoleksi">
-          <h2>Kontak</h2>
+          <h2>Tambah Koleksi</h2>
           <FormKontak @kirim="tanganiKirim" />
+        </section>
+
+        <section id="Manhwa">
+          <h2>Manhwa Favorit</h2>
+
+          <div class="galeri">
+            <article class="kartu">
+              <h3>Solo Leveling</h3>
+              <p>
+                Salah satu manhwa favorit saya
+                dengan tema action dan fantasy.
+              </p>
+              <div class="kartu__kaki">
+                <span>Action · Fantasy</span>
+              </div>
+            </article>
+
+            <article class="kartu">
+              <h3>Tower of God</h3>
+              <p>
+                Manhwa dengan cerita petualangan
+                dan dunia yang luas.
+              </p>
+              <div class="kartu__kaki">
+                <span>Adventure · Fantasy</span>
+              </div>
+            </article>
+          </div>
         </section>
       </div>
     </main>
 
     <footer>
-      Orlando Ryan Sadewa · 25523129 · 2026
+      <p>Orlando Ryan Sadewa · 25523129 · 2026</p>
     </footer>
   </div>
 </template>
