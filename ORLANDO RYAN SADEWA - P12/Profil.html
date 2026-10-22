@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animation</title>
+
+    <link rel="icon" type="image/x-icon"
+        href="data:image/png;base64,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">
+
+    <link rel="stylesheet" href="./token.css">
+    <link rel="stylesheet" href="./base.css">
+    <link rel="stylesheet" href="./layout.css">
+    <link rel="stylesheet" href="./komponen.css">
+    <link rel="stylesheet" href="./tema.css">
+    <link rel="stylesheet" href="./responsif.css">
+</head>
+
+<body>
+    <div class="page">
+
+        <header>
+            <div class="navbar">
+                <div class="brand">
+                    <h1>Daftar Anime, Donghua, dan Manhwa</h1>
+                </div>
+
+                <nav aria-label="Navigasi utama">
+                    <ul>
+                        <li><a href="#Anime">Anime</a></li>
+                        <li><a href="#Donghua">Donghua</a></li>
+                        <li><a href="#Manhwa">Manhwa</a></li>
+                    </ul>
+                </nav>
+
+                <div class="tema-pengatur">
+                    <input type="checkbox" id="tema" class="pengalih-tema">
+                    <label for="tema" class="tombol-tema"></label>
+                </div>
+            </div>
+        </header>
+
+        <main class="isi">
+            <aside class="sisi">
+                <div class="kartu">
+                    <h2>Koleksi Saya</h2>
+
+                    <p>
+                        Selamat datang di koleksi anime,
+                        donghua, dan manhwa saya.
+                    </p>
+
+                    <nav aria-label="Menu koleksi">
+                        <ul>
+                            <li><a href="#Anime">Anime</a></li>
+                            <li><a href="#Donghua">Donghua</a></li>
+                            <li><a href="#Manhwa">Manhwa</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="utama">
+
+                <section id="Proyek">
+                    <h2>Daftar Proyek</h2>
+
+                    <div class="kontrol-proyek">
+                        <div id="filter" class="baris-filter">
+                            <button type="button"
+                                data-kategori="semua"
+                                class="aktif">
+                                Semua
+                            </button>
+
+                            <button type="button"
+                                data-kategori="web">
+                                Web
+                            </button>
+
+                            <button type="button"
+                                data-kategori="lainnya">
+                                Lainnya
+                            </button>
+                        </div>
+
+                        <button type="button" id="atur-ulang">
+                            Atur Ulang
+                        </button>
+                    </div>
+
+                    <p id="muat" hidden>Memuat data...</p>
+                    <ul id="daftar" class="galeri"></ul>
+                    <p id="kosong" hidden>Belum ada data.</p>
+                    <p id="galat" hidden></p>
+                </section>
+
+                <section id="Anime">
+                    <h2>Anime, Donghua, dan Manhwa</h2>
+
+                    <div class="galeri">
+                        <div class="kartu">
+                            <div class="table-wrap">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Anime</th>
+                                            <th scope="col">Donghua</th>
+                                            <th scope="col">Manhwa</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">One Piece</th>
+                                            <td>Ni Tian Zhizun</td>
+                                            <td>Solo Leveling</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Naruto Shipuden</th>
+                                            <td>Xian Ni</td>
+                                            <td>Dogulwang</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Jujutsu Kaisen</th>
+                                            <td>Wanmei Shijie</td>
+                                            <td>Tower of Gods</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <figure>
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTseeq3hq7Z1BBo1a2oKNkzll3rG-E-d_3prSPVHPg1eA&s=10"
+                            alt="Gambar koleksi anime, donghua, dan manhwa"
+                            width="640"
+                            height="360"
+                            loading="lazy">
+
+                        <figcaption>
+                            Koleksi anime, donghua, dan manhwa
+                        </figcaption>
+                    </figure>
+                </section>
+
+                <section id="TambahKoleksi">
+                    <h2>Tambah Koleksi</h2>
+
+                    <form id="form-koleksi" action="/simpan" method="post">
+                        <div class="field-form">
+                            <label for="list-donghua">Nama Donghua</label>
+                            <input
+                                type="text"
+                                id="list-donghua"
+                                name="donghua"
+                                placeholder="Masukkan nama donghua"
+                                aria-describedby="error-donghua">
+
+                            <p id="error-donghua" class="pesan-error" hidden></p>
+                        </div>
+
+                        <div class="field-form">
+                            <label for="list-anime">Nama Anime</label>
+                            <input
+                                type="text"
+                                id="list-anime"
+                                name="anime"
+                                placeholder="Masukkan nama anime"
+                                aria-describedby="error-anime">
+
+                            <p id="error-anime" class="pesan-error" hidden></p>
+                        </div>
+
+                        <div class="field-form">
+                            <label for="list-manhwa">Nama Manhwa</label>
+                            <input
+                                type="text"
+                                id="list-manhwa"
+                                name="manhwa"
+                                placeholder="Masukkan nama manhwa"
+                                aria-describedby="error-manhwa">
+
+                            <p id="error-manhwa" class="pesan-error" hidden></p>
+                        </div>
+
+                        <button type="submit" id="btn-kirim" disabled>
+                            Kirim Koleksi
+                        </button>
+                    </form>
+                </section>
+
+                <section id="Manhwa">
+                    <h2>Manhwa Favorit</h2>
+
+                    <div class="galeri">
+                        <article class="kartu">
+                            <h3>Solo Leveling</h3>
+
+                            <p>
+                                Salah satu manhwa favorit saya
+                                dengan tema action dan fantasy.
+                            </p>
+
+                            <div class="kartu__kaki">
+                                <span>Action · Fantasy</span>
+                            </div>
+                        </article>
+
+                        <article class="kartu">
+                            <h3>Tower of God</h3>
+
+                            <p>
+                                Manhwa dengan cerita petualangan
+                                dan dunia yang luas.
+                            </p>
+
+                            <div class="kartu__kaki">
+                                <span>Adventure · Fantasy</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <p>Orlando Ryan Sadewa · 25523129 · 2026</p>
+        </footer>
+
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>
